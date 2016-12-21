@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel = 'stylesheet' href='layout/player.css'/>
+        <script src ='lib/player.js' ></script>
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    </head>
+    <body>
+
+        <section id='playerContainer' class='player paused'>
+
+            <div class="title-bar">
+                <div class="title-bar-container draggable">
+
+                  <div class="menu-container">
+
+                    <!-- Left aligned menu below button -->
+                    <button id="file-menu"
+                          class="mdl-button mdl-js-button">
+                    File
+                    </button>
+
+                    <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect"
+                      for="file-menu">
+                    <li id="close-menu" class="mdl-menu__item">Quit</li>
+                    </ul>
+
+                  </div>
+
+                  <div class="window-controls">
+                    <button id="minimize" class="minimize"></button>
+                    <button id="maximize" class="maximize"></button>
+                    <button id="close" class="close"></button>
+                  </div>
+
+                </div>
+
+            </div>
+
+            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+              <!--
+              <div class="mdl-tabs__tab-bar">
+                  <a href="#home-panel" class="mdl-tabs__tab is-active">Home</a>
+                  <a href="#youtube-panel" class="mdl-tabs__tab">YouTube</a>
+              </div>
+              -->
+
+              <div class="mdl-tabs__panel is-active" id="home-panel">
+                <section id='dropArea' class='dropArea'>
+                    <div class='dropZone'>
+                        Choose/Enter Video Or Drag 'n Drop
+                    </div>
+                    <button id='fileChooser' class='fileChooser'>
+                        Choose File
+                    </button>
+                    <input type='text'
+                           id='enterLink'
+                           class='enterLink'
+                           placeholder='URL or path'
+                    />
+                    <input type='file'
+                           accept="video/*"
+                           id='chooseVideo'
+                           class='chooseVideo hide'
+                    />
+                </section>
+              </div>
+              <div class="mdl-tabs__panel" id="youtube-panel">
+                <div class="">
+                  YouTube
+                </div>
+              </div>
+            </div>
+
+            <video id='videoContainer' class='video' ></video>
+            <div id='controlContainer' class='controls'>
+                <button id='play' class='play icon-play'></button>
+                <button id='pause' class='hide pause icon-pause'></button>
+                <progress id ='prog' class='progress' ></progress>
+                <div id = 'count' class = 'count'></div>
+                <button id='mute' class='icon-vol mute'></button>
+                <button id='volume' class='icon-vol2 volume'></button>
+                <input type='range'
+                       id='volRange'
+                       class='volRange hidden'
+                       max=1
+                       min=0
+                       step=0.05
+                />
+                <button id='fullscreen' class='icon-fullscreen fullscreen'></button>
+                <button id='smallscreen' class='icon-fullscreen-exit smallscreen'></button>
+            </div>
+
+            <section id='error' class='error hide hidden'>
+                <h1 id='errorMessage'></h1>
+            </section>
+
+
+        </section>
+
+        <!--
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Settings</h4>
+          <div id="window-settings" class="mdl-dialog__content">
+
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button">Save</button>
+            <button type="button" class="mdl-button close">Close</button>
+          </div>
+        </dialog>
+      -->
+    </body>
+</html>

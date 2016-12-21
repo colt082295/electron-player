@@ -1,0 +1,31 @@
+{
+  "name": "electron-player",
+  "version": "0.0.1",
+  "main": "main.js",
+  "description": "Desktop media player",
+  "author": "Colton Travers",
+  "dependencies": {
+    "electron-json-storage": "^2.1.0",
+    "material-design-lite": "^1.2.1"
+  },
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "iconUrl": "./img/logo-256.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^1.4.12",
+    "electron-packager": "^8.4.0"
+  },
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build",
+    "build-all": "build -mwl",
+    "build-win": "build -w",
+    "open-linux": "electron main.js --enable-transparent-visuals --disable-gpu"
+  }
+}
